@@ -1,14 +1,114 @@
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    height: 100vh;
     gap: 5px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px repeat(9, 1fr) 50px;
+    grid-template-areas: 
+    "hd"
+    "box1"
+    "box2"
+    "box3"
+    "box4"
+    "box5"
+    "box6"
+    "box7"
+    "box8"
+    "box9"
+    "as"
+    "ft";
 }
 
-.box {
-    background-color: blue;
-    padding: 10px;
-    color: aliceblue;
+header {
+    grid-area: hd;
+    background-color: aqua;
 }
 
+.box-1 {
+    grid-area: box1;
+    background-color: brown;
+}
+
+.box-2 {
+    grid-area: box2;
+    background-color: brown;
+}
+
+.box-3 {
+    grid-area: box3;
+    background-color: brown;
+}
+
+.box-4 {
+    grid-area: box4;
+    background-color: brown;
+}
+
+.box-5 {
+    grid-area: box5;
+    background-color: brown;
+}
+
+.box-6 {
+    grid-area: box6;
+    background-color: brown;
+}
+
+.box-7 {
+    grid-area: box7;
+    background-color: brown;
+}
+
+.box-8 {
+    grid-area: box8;
+    background-color: brown;
+}
+
+.box-9 {
+    grid-area: box9;
+    background-color: brown;
+}
+
+aside {
+    grid-area: as;
+    background-color: rgb(166, 93, 235);
+}
+
+.overlay {
+    grid-area: box5-start / box5-start / box6-end / box6-end;
+    background-color: rgba(136, 188, 15, 0.5);
+}
+
+footer {
+    grid-area: ft;
+    background-color: rgb(255, 83, 169);
+}
+
+@media screen and (min-width: 500px) { 
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50px repeat(6, 1fr) 40px;
+        grid-template-areas: 
+        "hd hd"
+        "box1 box2"
+        "box3 box4"
+        "box5 box6"
+        "box7 box8"
+        "box9 ."
+        "as as"
+        "ft ft";
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .wrapper {
+        height: 100vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 50px repeat(3, 1fr) 50px;
+        grid-template-areas: 
+        "hd hd hd hd"
+        "box1 box2 box3 as"
+        "box4 box5 box6 as"
+        "box7 box8 box9 as"
+        "ft ft ft ft";
+    }
+}
